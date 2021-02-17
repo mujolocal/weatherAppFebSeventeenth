@@ -24,7 +24,7 @@
         android:textSize="90sp"/>
   <androidx.recyclerview.widget.RecyclerView
       android:orientation="horizontal"
-      android:id="@+id/today_lv"
+      android:id="@+id/hour_rv"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       />
