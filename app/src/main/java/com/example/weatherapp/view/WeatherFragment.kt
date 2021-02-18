@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.adapters.WeatherFragmentAdapter
+import com.example.weatherapp.adapters.WeatherFragmentAdapterDaily
 import com.example.weatherapp.databinding.FragmentWeatherBinding
 
 class WeatherFragment: Fragment() {
@@ -17,6 +18,9 @@ class WeatherFragment: Fragment() {
     private lateinit var  hourRecyclerView: RecyclerView
     private lateinit var weatherFragmentAdapter:WeatherFragmentAdapter
     private var hourWeatherList = mutableListOf<String>()
+    private var dailyWeatherList = mutableListOf<String>()
+    private lateinit var weatherFragmentAdapterDaily: WeatherFragmentAdapterDaily
+    private lateinit var dailyRecyclerView: RecyclerView
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,6 +33,13 @@ class WeatherFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initHourlyRecycleView()
+        initDailyRecycleView()
+
+
+    }
+
+    fun initHourlyRecycleView(){
         hourWeatherList.addAll(listOf("aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa"))
         weatherFragmentAdapter = WeatherFragmentAdapter(hourWeatherList)
         hourRecyclerView = binding.hourRv
@@ -36,10 +47,17 @@ class WeatherFragment: Fragment() {
         layoutManager.orientation = LinearLayoutManager.HORIZONTAL
         hourRecyclerView.layoutManager = layoutManager
         hourRecyclerView.adapter = weatherFragmentAdapter
-
-
     }
 
+    fun initDailyRecycleView(){
+        dailyWeatherList.addAll(listOf("aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa","aaa"))
+        weatherFragmentAdapterDaily = WeatherFragmentAdapterDaily(dailyWeatherList)
+        val layoutManager = LinearLayoutManager(binding.root.context)
+        dailyRecyclerView = binding.dailyRv
+        dailyRecyclerView.adapter = weatherFragmentAdapterDaily
+        dailyRecyclerView.layoutManager = layoutManager
+
+    }
 
     companion object {
         fun newInstance() = WeatherFragment()
