@@ -1,1 +1,3 @@
 /build
+/src/main/java/com/example/weatherapp/viewModel/api_key.txt
+/src/main/java/com/example/weatherapp/viewModel/ApiKey.kt

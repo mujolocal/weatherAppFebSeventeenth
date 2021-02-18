@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.adapters.WeatherFragmentAdapter
 import com.example.weatherapp.adapters.WeatherFragmentAdapterDaily
 import com.example.weatherapp.databinding.FragmentWeatherBinding
+import com.example.weatherapp.viewModel.WeatherFragmentViewModel
 
 class WeatherFragment: Fragment() {
     private  val TAG = "WeatherFragment"
@@ -33,6 +34,8 @@ class WeatherFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val viewModel = WeatherFragmentViewModel()
+        binding.cityTv.text = viewModel.API_KEY
         initHourlyRecycleView()
         initDailyRecycleView()
 
