@@ -11,5 +11,5 @@ data class Weather(
     val lon: Double?,
     val minutely: List<Minutely>?,
     val timezone: String?,
-    val timezone_offset: Int?
+    val timezone_offset: Double?
 )

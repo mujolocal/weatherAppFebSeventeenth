@@ -6,7 +6,7 @@ import com.squareup.moshi.JsonClass
 data class Temp(
     val day: Double?,
     val eve: Double?,
-    val max: Int?,
+    val max: Double?,
     val min: Double?,
     val morn: Double?,
     val night: Double?

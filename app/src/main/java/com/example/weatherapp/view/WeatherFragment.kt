@@ -1,10 +1,12 @@
 package com.example.weatherapp.view
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Adapter
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -32,12 +34,15 @@ class WeatherFragment: Fragment() {
         false
     ).also { binding = it }.root
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val viewModel = WeatherFragmentViewModel()
         binding.cityTv.text = viewModel.API_KEY
         initHourlyRecycleView()
         initDailyRecycleView()
+        viewModel.getWeathers()
+
 
 
     }

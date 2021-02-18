@@ -4,19 +4,19 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Daily(
-    val clouds: Int?,
-    val dew_point: Double?,
-    val dt: Int?,
+    val clouds: Double?,
+    val dew_poDouble: Double?,
+    val dt: Double?,
     val feels_like: FeelsLike?,
-    val humidity: Int?,
+    val humidity: Double?,
     val pop: Double?,
-    val pressure: Int?,
+    val pressure: Double?,
     val snow: Double?,
-    val sunrise: Int?,
-    val sunset: Int?,
+    val sunrise: Double?,
+    val sunset: Double?,
     val temp: Temp?,
     val uvi: Double?,
     val weather: List<WeatherXX>?,
-    val wind_deg: Int?,
+    val wind_deg: Double?,
     val wind_speed: Double?
 )
